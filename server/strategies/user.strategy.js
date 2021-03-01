@@ -17,24 +17,20 @@ passport.deserializeUser((id, done) => {
       if (user) {
         // user found
         delete user.password; // remove password so it doesn't get sent
-        // done takes an error (null in this case) and a user
         done(null, user);
       } else {
         // user not found
-        // done takes an error (null in this case) and a user (also null in this case)
         // this will result in the server returning a 401 status code
         done(null, null);
       }
     })
     .catch((error) => {
       console.log('Error with query during deserializing user ', error);
-      // done takes an error (we have one) and a user (null in this case)
       // this will result in the server returning a 500 status code
       done(error, null);
     });
 });
 
-// Does actual work of logging in
 passport.use(
   'local',
   new LocalStrategy((username, password, done) => {
@@ -47,15 +43,12 @@ passport.use(
           // done takes an error (null in this case) and a user
           done(null, user);
         } else {
-          // Not good! Username and password do not match.
-          // done takes an error (null in this case) and a user (also null in this case)
           // this will result in the server returning a 401 status code
           done(null, null);
         }
       })
       .catch((error) => {
         console.log('Error with query for user ', error);
-        // done takes an error (we have one) and a user (null in this case)
         // this will result in the server returning a 500 status code
         done(error, null);
       });

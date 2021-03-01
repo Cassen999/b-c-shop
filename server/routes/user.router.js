@@ -15,8 +15,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 });
 
 // Handles POST request with new user data
-// The only thing different from this and every other post we've seen
-// is that the password gets encrypted before being inserted
+// This password gets encrypted before being inserted
 router.post('/register', (req, res, next) => {
   const username = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
@@ -33,7 +32,6 @@ router.post('/register', (req, res, next) => {
 });
 
 // Handles login form authenticate/login POST
-// userStrategy.authenticate('local') is middleware that we run on this route
 // this middleware will run our POST if successful
 // this middleware will send a 404 if not successful
 router.post('/login', userStrategy.authenticate('local'), (req, res) => {

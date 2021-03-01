@@ -18,7 +18,7 @@ class RegisterForm extends Component {
         password: this.state.password,
       },
     });
-  }; // end registerUser
+  };
 
   handleInputChangeFor = (propertyName) => (event) => {
     this.setState({

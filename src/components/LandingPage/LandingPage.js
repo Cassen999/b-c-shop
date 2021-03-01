@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
 import './LandingPage.css';
-
-// CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 class LandingPage extends Component {
