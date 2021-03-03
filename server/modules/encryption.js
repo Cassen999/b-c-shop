@@ -1,11 +1,9 @@
-// No changes should be required in this file
-
 const bcrypt = require('bcryptjs');
 
-const SALT_WORK_FACTOR = 10; // This determines how secure the salt should be
+const SALT_WORK_FACTOR = 10;
 
 const encryptPassword = (password) => {
-  const salt = bcrypt.genSaltSync(SALT_WORK_FACTOR); // This generates a random salt
+  const salt = bcrypt.genSaltSync(SALT_WORK_FACTOR);
   return bcrypt.hashSync(password, salt);
 };
 

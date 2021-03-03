@@ -1,5 +1,3 @@
-// No changes should be required in this file
-
 const cookieSession = require('cookie-session');
 const warnings = require('../constants/warnings');
 
@@ -14,10 +12,10 @@ const serverSessionSecret = () => {
 };
 
 module.exports = cookieSession({
-  secret: serverSessionSecret() || 'secret', // please set this in your .env file
+  secret: serverSessionSecret() || 'secret',
   key: 'user', 
   resave: 'false',
   saveUninitialized: false,
-  maxAge: 60 * 60 * 1000, // Set to 1 hour
+  maxAge: 60 * 60 * 1000,
   secure: false
 });

@@ -22,7 +22,7 @@ class LoginForm extends Component {
     } else {
       this.props.dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
-  }; // end login
+  };
 
   handleInputChangeFor = (propertyName) => (event) => {
     this.setState({
