@@ -20,4 +20,21 @@ router.get('/mailing', rejectUnauthenticated, (req, res) => {
     });
 })
 
+// Gets logged in user's billing address
+router.get('/billing', rejectUnauthenticated, (req, res) => {
+  const id = req.user.id;
+  const sqlText = `SELECT address, city, first_name, last_name, state, zip
+                    FROM "bill_address" ba
+                    WHERE user_id = $1;`
+  pool
+    .query(sqlText, [id])
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("GET billing address error ", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;

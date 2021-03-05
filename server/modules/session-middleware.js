@@ -3,10 +3,11 @@ const cookieSession = require('cookie-session');
 
 const serverSessionSecret = () => {
   if (!process.env.SERVER_SESSION_SECRET ||
-      process.env.SERVER_SESSION_SECRET.length < 8 ||
-      process.env.SERVER_SESSION_SECRET === warnings.exampleBadSecret) {
+      process.env.SERVER_SESSION_SECRET.length < 8 )
+      // ||
+      // process.env.SERVER_SESSION_SECRET === warnings.exampleBadSecret) {
     // console.log(warnings.badSecret);
-  }
+  // }
 
   return process.env.SERVER_SESSION_SECRET;
 };
