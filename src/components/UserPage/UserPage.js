@@ -17,7 +17,7 @@ function UserPage (props) {
   }, []);
 
   const fetchMailingAddress = () => {
-    dispatch({type: 'FETCH_MAILING_ADDRESS', payload: props.store.user.id})
+    dispatch({type: 'FETCH_MAILING_ADDRESS'})
   };
 
   const { title, body } = state;
