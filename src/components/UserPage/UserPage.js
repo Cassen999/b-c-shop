@@ -1,18 +1,36 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-class UserPage extends Component {
-  render() {
-    return (
-      <div>
-        <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
-        <p>Your ID is: {this.props.store.user.id}</p>
-        <LogOutButton className="log-in" />
-      </div>
-    );
-  }
+function UserPage (props) {
+  
+  const [state, setState] = useState({
+    title: 'This is the user landing page',
+    body: 'This is the body of my hook state'
+  })
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchMailingAddress();
+  }, []);
+
+  const fetchMailingAddress = () => {
+    dispatch({type: 'FETCH_MAILING_ADDRESS', payload: props.store.user.id})
+  };
+
+  const { title, body } = state;
+
+  return (
+    
+    <div>
+      <h1 id="welcome">Welcome, {props.store.user.username}! {title}</h1>
+      <p>Your ID is: {props.store.user.id}</p>
+      
+      <LogOutButton className="log-in" />
+    </div>
+  );
 }
 
 export default connect(mapStoreToProps)(UserPage);
