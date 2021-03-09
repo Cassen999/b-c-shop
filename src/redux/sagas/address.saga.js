@@ -12,8 +12,19 @@ function* fetchMailingAddress() {
   }
 }
 
+function* fetchBillingAddress(){
+  console.log('in fetchBillingAddress');
+  try {
+    const res = yield axios.get('/api/address/billing')
+    yield put({type: 'SET_BILLING_ADDRESS', payload: res.data})
+  } catch(err) {
+    console.log('error in fetchBillingAddress', err)
+  }
+}
+
 function* addressSaga() {
   yield takeLatest("FETCH_MAILING_ADDRESS", fetchMailingAddress);
+  yield takeLatest("FETCH_BILLING_ADDRESS", fetchBillingAddress);
 }
 
 export default addressSaga;

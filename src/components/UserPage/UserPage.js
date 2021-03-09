@@ -14,10 +14,15 @@ function UserPage (props) {
 
   useEffect(() => {
     fetchMailingAddress();
+    fetchBillingAddress();
   }, []);
 
   const fetchMailingAddress = () => {
     dispatch({type: 'FETCH_MAILING_ADDRESS'})
+  };
+
+  const fetchBillingAddress = () => {
+    dispatch({type: 'FETCH_BILLING_ADDRESS'})
   };
 
   const { title, body } = state;
