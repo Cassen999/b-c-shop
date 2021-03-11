@@ -19,4 +19,4 @@ router.get('/new_albums', (req, res) => {
 
 module.exports = router;
 
-// lalala
+const me = 'bradley'
