@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import './LandingPage.css';
-import RegisterForm from '../RegisterForm/RegisterForm';
+import { withStyles, Grid } from '@material-ui/core';
 
 class LandingPage extends Component {
   state = {
@@ -14,36 +14,13 @@ class LandingPage extends Component {
   };
 
   render() {
+    const { classes } = this.props;
     return (
-      <div className="container">
-        <h2>{this.state.heading}</h2>
-        <div className="grid">
-          <div className="grid-col grid-col_8">
-            <p>
-              Lorem ipsum dolor sit amet
-            </p>
-
-            <p>
-              Praesent consectetur orci dui
-            </p>
-
-            <p>
-              Fusce porta diam ac tortor elementum
-            </p>
-          </div>
-          <div className="grid-col grid-col_4">
-            <RegisterForm />
-            <center>
-              <h4>Already a Member?</h4>
-              <button className="btn btn_sizeSm" onClick={this.onLogin}>
-                Login
-              </button>
-            </center>
-          </div>
-        </div>
+      <div>
+        
       </div>
     );
   }
 }
 
-export default connect(mapStoreToProps)(LandingPage);
+export default connect(mapStoreToProps)(withStyles(styles)(LandingPage));

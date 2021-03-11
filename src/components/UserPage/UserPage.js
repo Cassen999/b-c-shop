@@ -4,6 +4,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 function UserPage (props) {
+
   
   const [state, setState] = useState({
     title: 'This is the user landing page',
