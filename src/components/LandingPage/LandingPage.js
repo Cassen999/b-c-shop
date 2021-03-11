@@ -1,26 +1,45 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import './LandingPage.css';
-import { withStyles, Grid } from '@material-ui/core';
+import { makeStyles, Grid, Paper } from '@material-ui/core';
 
-class LandingPage extends Component {
-  state = {
-    heading: 'Class Component',
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 140,
+    width: 100,
+  },
+  control: {
+    padding: theme.spacing(2),
+  },
+}));
+
+function LandingPage (props) {
+  const [heading, setHeading] = useState('')
+  const classes = useStyles();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchNewAlbums();
+  }, []);
+
+  const fetchNewAlbums = () => {
+    dispatch({type: 'FETCH_NEW_ALBUMS'})
   };
 
-  onLogin = (event) => {
-    this.props.history.push('/login');
-  };
+  // onLogin = (event) => {
+  //   props.history.push('/login');
+  // };
 
-  render() {
-    const { classes } = this.props;
     return (
       <div>
         
       </div>
     );
-  }
 }
 
-export default connect(mapStoreToProps)(withStyles(styles)(LandingPage));
+export default connect(mapStoreToProps)(LandingPage);

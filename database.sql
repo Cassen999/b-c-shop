@@ -93,3 +93,19 @@ VALUES (1, 'Cassen', 'Gerber', '8521 11th Ave S', 'Bloomington', 'Minnesota', 55
 DROP TABLE "bill_address";
 DROP TABLE "ship_address";
 DROP TABLE "products" CASCADE;
+
+ALTER TABLE "albums"
+ADD release_date DATE;
+
+INSERT INTO "artists" ("name", founded, city, "state", country)
+VALUES ('Abbath', 2015, 'Bergen', '', 'Norway'), ('AC/DC', 1973, 'Sydney', '', 'Australia'),
+				('Black Sabbath', 1968, 'Birmingham', '', 'England'), ('Bongzilla', 1995, '', 'Wisconsin', 'United States'),
+				('Cannibal Corpse', 1988, 'Buffalo', 'New York', 'United States'), ('With Iowa In Between', 2013, 'Minneapolis', 'Minnesota', 'United States'), 
+				('Gwar', 1985, 'Richmond', 'Virginia', 'United States'), ('HIM', 1991, 'Helsinki', '', 'Finland'), 
+				('Miles Davis', 1944, 'Alton', 'Illinois', 'United States'), ('Dizzy Gillespie', 1935, 'Cheraw', 'South Carolina', 'United States'), 
+				('Beethoven', 1794, 'Bonn', '', 'Germany'), ('B.B. King', 1942, 'Itta Bena', 'Mississippi', 'United States'), 
+				('Daft Punk', 1993, 'Paris', '', 'France'), ('Darude', 1997, 'Eura', '', 'Finland'), 
+				('Touche Amore', 2007, 'Los Angeles', 'California', 'United States');
+
+INSERT INTO "albums" ("name", artist_id, genre_id, type_id, price, stock, release_date)
+VALUES ();

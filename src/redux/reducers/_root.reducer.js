@@ -3,12 +3,14 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import mailingAddressReducer from './mailingAddress.reducer';
 import billingAddressReducer from './billingAddress.reducer';
+import productsReducer from './products.reducer';
 
 const rootReducer = combineReducers({
   errors,
   user,
   mailingAddressReducer,
-  billingAddressReducer
+  billingAddressReducer,
+  productsReducer
 });
 
 export default rootReducer;
