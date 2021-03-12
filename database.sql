@@ -107,5 +107,11 @@ VALUES ('Abbath', 2015, 'Bergen', '', 'Norway'), ('AC/DC', 1973, 'Sydney', '', '
 				('Daft Punk', 1993, 'Paris', '', 'France'), ('Darude', 1997, 'Eura', '', 'Finland'), 
 				('Touche Amore', 2007, 'Los Angeles', 'California', 'United States');
 
+INSERT INTO "albums" ("name", artist_id, genre_id, type_id, price, stock)
+VALUES ('asdv', 1 ,1, 1, 111, 1), ('asdv', 2 ,2, 3, 111, 1), ('asdv', 3 ,3, 4, 111, 1), ('asdv', 4, 4, 2, 111, 1), 
+        ('asdv', 5, 5, 1, 111, 1), ('asdv', 6 ,6, 2, 111, 1), ('asdv', 7 ,1, 3, 111, 1), ('asdv', 8 ,2, 4, 111, 1), 
+        ('asdv', 9 ,3, 1, 111, 1), ('asdv', 10 ,4, 2, 111, 1), ('asdv', 11 ,5, 3, 111, 1), ('asdv', 12 ,6, 4, 111, 1), 
+        ('asdv', 13,1, 1, 111, 1), ('asdv', 14 ,2, 2, 111, 1), ('asdv', 15 ,3, 3, 111, 1);
+
 INSERT INTO "albums" ("name", artist_id, genre_id, type_id, price, stock, release_date)
 VALUES ();
