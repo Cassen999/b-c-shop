@@ -16,6 +16,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AlbumPage from '../AlbumPage/AlbumPage';
+import Admin from '../Admin/Admin';
 import './App.css';
 
 class App extends Component {
@@ -55,6 +56,14 @@ class App extends Component {
               component={LoginPage}
               authRedirect="/user"
             />
+
+            <ProtectedRoute
+              exact
+              path="/admin"
+              component={Admin}
+              authRedirect="/home"
+            />
+
             <ProtectedRoute
               exact
               path="/registration"
