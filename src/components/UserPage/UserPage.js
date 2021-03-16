@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import LandingPage from '../LandingPage/LandingPage';
 
 function UserPage (props) {
 
@@ -33,7 +34,7 @@ function UserPage (props) {
     <div>
       <h1 id="welcome">Welcome, {props.store.user.username}! {title}</h1>
       <p>Your ID is: {props.store.user.id}</p>
-      
+      <LandingPage />
       <LogOutButton className="log-in" />
     </div>
   );
