@@ -3,8 +3,8 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.get('/new_albums', (req, res) => {
-    const sqlText = `SELECT * FROM albums
-                    ORDER BY release_date DESC LIMIT 12;`
+    const sqlText = `SELECT * FROM albums`
+                    // ORDER BY release_date DESC LIMIT 12;`
     pool
       .query(sqlText)
       .then((result) => {
