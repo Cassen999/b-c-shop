@@ -3,7 +3,6 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.get('/new_albums', (req, res) => {
-  console.log('in get new albums')
     const sqlText = `SELECT * FROM albums
                     ORDER BY release_date DESC LIMIT 12;`
     pool
